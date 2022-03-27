@@ -2,6 +2,12 @@
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
+  annotations:
+    app.openshift.io/vcs-ref: main
+    jkube.io/git-url: https://github.com/abdelhamidfg/location-soap-rest.git
+    app.openshift.io/vcs-uri: https://github.com/abdelhamidfg/location-soap-rest.git
+    jkube.io/git-commit: 3f3224814619a6f554bcd744119c16d5c1472a55
+    jkube.io/git-branch: main
   labels:
     app: location-soa-rest
     provider: jkube
@@ -21,6 +27,12 @@ spec:
     type: Rolling
   template:
     metadata:
+      annotations:
+        app.openshift.io/vcs-ref: main
+        jkube.io/git-url: https://github.com/abdelhamidfg/location-soap-rest.git
+        app.openshift.io/vcs-uri: https://github.com/abdelhamidfg/location-soap-rest.git
+        jkube.io/git-commit: 3f3224814619a6f554bcd744119c16d5c1472a55
+        jkube.io/git-branch: main
       labels:
         rht.comp: spring-boot-camel-xml
         com.company: Red_Hat
@@ -47,17 +59,16 @@ spec:
           failureThreshold: 3
           httpGet:
             path: /actuator/health
-            port: 8080
+            port: 8090
             scheme: HTTP
           initialDelaySeconds: 180
           successThreshold: 1
         name: spring-boot
         ports:
-        - containerPort: 8080
-          name: http
-          protocol: TCP
         - containerPort: 9779
           name: prometheus
+          protocol: TCP
+        - containerPort: 8090
           protocol: TCP
         - containerPort: 8778
           name: jolokia
@@ -66,7 +77,7 @@ spec:
           failureThreshold: 3
           httpGet:
             path: /actuator/health
-            port: 8080
+            port: 8090
             scheme: HTTP
           initialDelaySeconds: 10
           successThreshold: 1

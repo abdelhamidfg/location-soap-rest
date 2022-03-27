@@ -60,16 +60,13 @@
       <artifactId>camel-cxf</artifactId>
       <version>2.23.2.fuse-790054-redhat-00001</version>
     </dependency>
-        <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-spark-rest</artifactId>
+     
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-undertow</artifactId>
       <version>2.23.2.fuse-790054-redhat-00001</version>
-    </dependency>
- 
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-servlet-starter</artifactId>
-    </dependency>
+    <!-- use the same version as your Camel core version -->
+</dependency>
     
      <dependency>
        <groupId>org.apache.camel</groupId>

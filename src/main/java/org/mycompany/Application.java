@@ -15,6 +15,8 @@
  */
 package org.mycompany;
 
+import java.util.Collections;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -29,6 +31,10 @@ public class Application {
     // must have a main method spring-boot can run
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+//    	SpringApplication app = new SpringApplication(Application.class);
+//        app.setDefaultProperties(Collections
+//          .singletonMap("server.port", "8080"));
+//        app.run(args);
     }
 
 }

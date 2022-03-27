@@ -3,14 +3,18 @@
   "kind" : "Service",
   "metadata" : {
     "annotations" : {
+      "app.openshift.io/vcs-ref" : "main",
+      "app.openshift.io/vcs-uri" : "https://github.com/abdelhamidfg/location-soap-rest.git",
+      "jkube.io/git-branch" : "main",
+      "jkube.io/git-commit" : "3f3224814619a6f554bcd744119c16d5c1472a55",
+      "jkube.io/git-url" : "https://github.com/abdelhamidfg/location-soap-rest.git",
       "prometheus.io/path" : "/metrics",
       "prometheus.io/port" : "9779",
       "prometheus.io/scrape" : "true"
     },
-    "creationTimestamp" : "2022-03-27T13:11:32Z",
+    "creationTimestamp" : "2022-03-27T19:38:59Z",
     "labels" : {
       "app" : "location-soa-rest",
-      "expose" : "true",
       "group" : "org.mycompany",
       "provider" : "jkube",
       "version" : "1.0.0-SNAPSHOT"
@@ -22,6 +26,11 @@
         "f:metadata" : {
           "f:annotations" : {
             "." : { },
+            "f:app.openshift.io/vcs-ref" : { },
+            "f:app.openshift.io/vcs-uri" : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { },
             "f:prometheus.io/path" : { },
             "f:prometheus.io/port" : { },
             "f:prometheus.io/scrape" : { }
@@ -29,7 +38,6 @@
           "f:labels" : {
             "." : { },
             "f:app" : { },
-            "f:expose" : { },
             "f:group" : { },
             "f:provider" : { },
             "f:version" : { }
@@ -38,9 +46,8 @@
         "f:spec" : {
           "f:ports" : {
             "." : { },
-            "k:{\"port\":8080,\"protocol\":\"TCP\"}" : {
+            "k:{\"port\":8090,\"protocol\":\"TCP\"}" : {
               "." : { },
-              "f:name" : { },
               "f:port" : { },
               "f:protocol" : { },
               "f:targetPort" : { }
@@ -58,22 +65,21 @@
       },
       "manager" : "okhttp",
       "operation" : "Update",
-      "time" : "2022-03-27T14:56:38Z"
+      "time" : "2022-03-27T19:38:59Z"
     } ],
     "name" : "location-soa-rest",
     "namespace" : "fuse79",
-    "resourceVersion" : "142297",
+    "resourceVersion" : "216128",
     "selfLink" : "/api/v1/namespaces/fuse79/services/location-soa-rest",
-    "uid" : "13761c3d-c285-41ca-86fa-badcb8df8302"
+    "uid" : "0514771d-c42d-42b5-91a5-3b4553c42aaf"
   },
   "spec" : {
-    "clusterIP" : "172.30.201.166",
-    "clusterIPs" : [ "172.30.201.166" ],
+    "clusterIP" : "172.30.223.142",
+    "clusterIPs" : [ "172.30.223.142" ],
     "ports" : [ {
-      "name" : "http",
-      "port" : 8080,
+      "port" : 8090,
       "protocol" : "TCP",
-      "targetPort" : 8080
+      "targetPort" : 8090
     } ],
     "selector" : {
       "app" : "location-soa-rest",

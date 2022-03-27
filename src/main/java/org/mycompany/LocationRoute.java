@@ -23,9 +23,9 @@ public class LocationRoute extends RouteBuilder{
 		
 		
 		restConfiguration()
-		.component("spark-rest")
+		.component("undertow")
 		.bindingMode(RestBindingMode.json)
-	   // .host("0.0.0.0").port(8084)
+	    .host("0.0.0.0").port(8080)
 			.enableCORS(true)
 	    	
 			.contextPath("/")

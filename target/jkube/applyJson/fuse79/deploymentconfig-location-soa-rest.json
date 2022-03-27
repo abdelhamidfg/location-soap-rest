@@ -2,7 +2,14 @@
   "apiVersion" : "apps.openshift.io/v1",
   "kind" : "DeploymentConfig",
   "metadata" : {
-    "creationTimestamp" : "2022-03-27T17:50:51Z",
+    "annotations" : {
+      "app.openshift.io/vcs-ref" : "main",
+      "app.openshift.io/vcs-uri" : "https://github.com/abdelhamidfg/location-soap-rest.git",
+      "jkube.io/git-branch" : "main",
+      "jkube.io/git-commit" : "3f3224814619a6f554bcd744119c16d5c1472a55",
+      "jkube.io/git-url" : "https://github.com/abdelhamidfg/location-soap-rest.git"
+    },
+    "creationTimestamp" : "2022-03-27T19:39:00Z",
     "generation" : 1,
     "labels" : {
       "app" : "location-soa-rest",
@@ -15,6 +22,14 @@
       "fieldsType" : "FieldsV1",
       "fieldsV1" : {
         "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:app.openshift.io/vcs-ref" : { },
+            "f:app.openshift.io/vcs-uri" : { },
+            "f:jkube.io/git-branch" : { },
+            "f:jkube.io/git-commit" : { },
+            "f:jkube.io/git-url" : { }
+          },
           "f:labels" : {
             "." : { },
             "f:app" : { },
@@ -48,6 +63,14 @@
             "." : { },
             "f:metadata" : {
               "." : { },
+              "f:annotations" : {
+                "." : { },
+                "f:app.openshift.io/vcs-ref" : { },
+                "f:app.openshift.io/vcs-uri" : { },
+                "f:jkube.io/git-branch" : { },
+                "f:jkube.io/git-commit" : { },
+                "f:jkube.io/git-url" : { }
+              },
               "f:creationTimestamp" : { },
               "f:labels" : {
                 "." : { },
@@ -107,10 +130,9 @@
                   "f:name" : { },
                   "f:ports" : {
                     "." : { },
-                    "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}" : {
+                    "k:{\"containerPort\":8090,\"protocol\":\"TCP\"}" : {
                       "." : { },
                       "f:containerPort" : { },
-                      "f:name" : { },
                       "f:protocol" : { }
                     },
                     "k:{\"containerPort\":8778,\"protocol\":\"TCP\"}" : {
@@ -173,12 +195,12 @@
       },
       "manager" : "okhttp",
       "operation" : "Update",
-      "time" : "2022-03-27T17:50:51Z"
+      "time" : "2022-03-27T19:39:00Z"
     } ],
     "name" : "location-soa-rest",
     "namespace" : "fuse79",
-    "resourceVersion" : "183457",
-    "uid" : "b27f3978-bbf0-48ba-95b3-bd98d511a9b4"
+    "resourceVersion" : "216135",
+    "uid" : "fefb3498-e01f-4588-a7e6-164be0bf1123"
   },
   "spec" : {
     "replicas" : 1,
@@ -202,6 +224,13 @@
     },
     "template" : {
       "metadata" : {
+        "annotations" : {
+          "app.openshift.io/vcs-ref" : "main",
+          "app.openshift.io/vcs-uri" : "https://github.com/abdelhamidfg/location-soap-rest.git",
+          "jkube.io/git-branch" : "main",
+          "jkube.io/git-commit" : "3f3224814619a6f554bcd744119c16d5c1472a55",
+          "jkube.io/git-url" : "https://github.com/abdelhamidfg/location-soap-rest.git"
+        },
         "labels" : {
           "app" : "location-soa-rest",
           "com.company" : "Red_Hat",
@@ -228,13 +257,13 @@
               }
             }
           } ],
-          "image" : "image-registry.openshift-image-registry.svc:5000/fuse79/location-soa-rest@sha256:ee0da2a5694771600f811cef488348f4389d9f68a6eb8af886d3ff9ae755c6ec",
+          "image" : "image-registry.openshift-image-registry.svc:5000/fuse79/location-soa-rest@sha256:05674996fb9f3908d260674bc72d79ba3927a5db2dcb69cf79db4b6a5467b2b9",
           "imagePullPolicy" : "IfNotPresent",
           "livenessProbe" : {
             "failureThreshold" : 3,
             "httpGet" : {
               "path" : "/actuator/health",
-              "port" : 8080,
+              "port" : 8090,
               "scheme" : "HTTP"
             },
             "initialDelaySeconds" : 180,
@@ -244,12 +273,11 @@
           },
           "name" : "spring-boot",
           "ports" : [ {
-            "containerPort" : 8080,
-            "name" : "http",
-            "protocol" : "TCP"
-          }, {
             "containerPort" : 9779,
             "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8090,
             "protocol" : "TCP"
           }, {
             "containerPort" : 8778,
@@ -260,7 +288,7 @@
             "failureThreshold" : 3,
             "httpGet" : {
               "path" : "/actuator/health",
-              "port" : 8080,
+              "port" : 8090,
               "scheme" : "HTTP"
             },
             "initialDelaySeconds" : 10,

@@ -10,6 +10,6 @@ items:
     tags:
     - from:
         kind: ImageStreamImage
-        name: location-soa-rest@sha256:ee0da2a5694771600f811cef488348f4389d9f68a6eb8af886d3ff9ae755c6ec
+        name: location-soa-rest@sha256:05674996fb9f3908d260674bc72d79ba3927a5db2dcb69cf79db4b6a5467b2b9
         namespace: fuse79
       name: latest
