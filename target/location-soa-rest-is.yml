@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    name: location-soa-rest
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: location-soa-rest@sha256:ee0da2a5694771600f811cef488348f4389d9f68a6eb8af886d3ff9ae755c6ec
+        namespace: fuse79
+      name: latest
