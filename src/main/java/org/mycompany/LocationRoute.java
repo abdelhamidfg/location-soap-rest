@@ -45,10 +45,12 @@ public class LocationRoute extends RouteBuilder{
         ;
 
         from("direct:getalllocationphone")
-            .setBody().simple("${headers.id}")
+         .setBody().simple("${headers.id}")
+            
             .unmarshal().json(JsonLibrary.Jackson)
-            .to("cxf://http://location-soap-location-soap.apps.cluster.ocp-hamid.com:80/ws/location?serviceClass=com.redhat.LocationDetailServicePortType&defaultOperationName=contact")
- 
+            .to("cxf://{{soap.endpoint}}?serviceClass=com.redhat.LocationDetailServicePortType&defaultOperationName=contact")
+ //http://dayinthelife-integration-fuse79.apps.cluster.ocp-hamid.com/ws/location
+            //http://location-soap-location-soap.apps.cluster.ocp-hamid.com:80/ws
             .process(
                     new Processor(){
 
